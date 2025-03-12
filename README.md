@@ -39,3 +39,28 @@ manifests:
 
 This setup streamlines the development process, enabling rapid iteration and deployment of changes to the Kubernetes
 cluster.
+
+### Steps to Use Skaffold with Your Spring Boot Project
+
+1. **Install Skaffold**:
+   - Follow the installation instructions from the [Skaffold documentation](https://skaffold.dev/docs/install/).
+
+2. **Configure `skaffold.yaml`**:
+   - Ensure your `skaffold.yaml` file is correctly configured as shown in the provided example.
+
+3. **Build and Deploy**:
+   - Open a terminal in the root directory of your project.
+   - Run the following command to build and deploy your application using Skaffold:
+     ```sh
+     skaffold dev
+     ```
+
+4. **Access Your Application**:
+   - Once deployed, you can access your Spring Boot application using the service URL provided by your Kubernetes
+     cluster.
+5. **Port Forward our app**
+    ```shell
+      skaffold dev --port-forward
+   ```
+
+These steps will help you set up and use Skaffold for continuous development with your Spring Boot project.
