@@ -63,4 +63,50 @@ cluster.
       skaffold dev --port-forward
    ```
 
+http://localhost:8080/api/v1/hendi
+
+```json
+// 20250312095725
+// http://localhost:8080/api/v1/hendi
+
+[
+  {
+    "userId": 1,
+    "lastName": "YUJI",
+    "firstName": "ITADORI",
+    "position": "father"
+  },
+  {
+    "userId": 2,
+    "lastName": "KUGISAKI",
+    "firstName": "NAOBARA",
+    "position": "mother"
+  },
+  {
+    "userId": 3,
+    "lastName": "RYOUMEN",
+    "firstName": "SUKUNA",
+    "position": "son"
+  },
+  {
+    "userId": 4,
+    "lastName": "SUGURU",
+    "firstName": "GETO",
+    "position": "uncle"
+  },
+  {
+    "userId": 5,
+    "lastName": "MEGUMI",
+    "firstName": "FUSHIGURO",
+    "position": "grandfather"
+  }
+]
+```
+
 These steps will help you set up and use Skaffold for continuous development with your Spring Boot project.
+
+### References :
+
+* https://skaffold.dev/
+* https://cloud.google.com/blog/products/application-development/kubernetes-development-simplified-skaffold-is-now-ga
+* https://medium.com/swlh/part-ii-spring-boot-app-development-with-skaffold-kustomize-and-jib-aa663e133558
