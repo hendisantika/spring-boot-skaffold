@@ -63,6 +63,15 @@ cluster.
       skaffold dev --port-forward
    ```
 
+6. Or via k8s cmd:
+    ```shell
+    minikube service list
+    ```
+   or
+    ```shell
+    minikube service spring-boot-app
+    ```
+
 http://localhost:8080/api/v1/hendi
 
 ```json
