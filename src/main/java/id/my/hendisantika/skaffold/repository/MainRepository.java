@@ -1,5 +1,6 @@
 package id.my.hendisantika.skaffold.repository;
 
+import id.my.hendisantika.skaffold.datastore.FakeDataStore;
 import id.my.hendisantika.skaffold.domain.Person;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
