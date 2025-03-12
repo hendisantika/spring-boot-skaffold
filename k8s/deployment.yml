@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-skaffold-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: springboot-skaffold
+  template:
+    metadata:
+      labels:
+        app: springboot-skaffold
+    spec:
+      containers:
+        - name: springboot-skaffold
+          image: springboot-skaffold
+          ports:
+            - containerPort: 8080
