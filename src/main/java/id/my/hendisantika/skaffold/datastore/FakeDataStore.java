@@ -1,6 +1,7 @@
 package id.my.hendisantika.skaffold.datastore;
 
 import id.my.hendisantika.skaffold.domain.Person;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.List;
  * Time: 09.37
  * To change this template use File | Settings | File Templates.
  */
+@Repository
 public class FakeDataStore {
     private static final List<Person> HENDI_FAMILY = new ArrayList<>();
 
