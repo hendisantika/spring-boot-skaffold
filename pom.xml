@@ -14,7 +14,7 @@
     <name>spring-boot-skaffold</name>
     <description>spring-boot-skaffold</description>
     <properties>
-        <java.version>21</java.version>
+        <java.version>25</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -91,7 +91,7 @@
                 <version>3.5.2</version>
                 <configuration>
                     <from>
-                        <image>openjdk:21</image>
+                        <image>eclipse-temurin:25-jre</image>
                     </from>
                     <to>
                         <image>springboot-skaffold</image>
