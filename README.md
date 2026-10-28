@@ -1,8 +1,40 @@
 # spring-boot-skaffold
 
+[![Java CI with Maven](https://github.com/hendisantika/spring-boot-skaffold/actions/workflows/maven.yml/badge.svg)](https://github.com/hendisantika/spring-boot-skaffold/actions/workflows/maven.yml)
+![Java](https://img.shields.io/badge/Java-25-orange?logo=openjdk)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.2-6DB33F?logo=springboot)
+
 Skaffold is a command-line tool that facilitates continuous development for Kubernetes-native applications. It automates
 the build, push, and deploy process, allowing developers to focus on writing code. For this project, Skaffold is
 configured to work with a Spring Boot application using Jib for building Docker images.
+
+### Tech Stack
+
+- **Java 25** (Eclipse Temurin)
+- **Spring Boot 4.1.2** (Web, Actuator, DevTools, Lombok)
+- **Maven** (via the bundled Maven Wrapper `./mvnw`)
+- **Jib** for building container images without a Dockerfile (base image `eclipse-temurin:25-jre`)
+- **Skaffold** + **Kubernetes** (e.g. Minikube) for local continuous development
+
+### Prerequisites
+
+- JDK 25
+- Docker
+- A Kubernetes cluster (e.g. [Minikube](https://minikube.sigs.k8s.io/))
+- [Skaffold](https://skaffold.dev/docs/install/)
+
+### Build & Run Locally
+
+```shell
+# Build and run the tests
+./mvnw clean package
+
+# Run the application
+./mvnw spring-boot:run
+
+# Build the container image into the local Docker daemon with Jib
+./mvnw compile jib:dockerBuild
+```
 
 ### Key Components in `skaffold.yaml`:
 
@@ -113,6 +145,15 @@ http://localhost:8080/api/v1/hendi
 ```
 
 These steps will help you set up and use Skaffold for continuous development with your Spring Boot project.
+
+### CI/CD & Dependency Updates
+
+- **GitHub Actions** (`.github/workflows/maven.yml`) builds and tests the project with JDK 25 on every push and pull
+  request to `main`. On pushes to `main` it also submits the Maven dependency graph to GitHub for better Dependabot
+  alerts.
+- **Dependabot** (`.github/dependabot.yml`) checks Maven dependencies and GitHub Actions daily (05:00 Asia/Jakarta).
+  Updates are grouped (Spring, Maven plugins, minor/patch, GitHub Actions) and use conventional commit prefixes
+  (`build(deps)`, `ci(deps)`).
 
 ### References :
 
